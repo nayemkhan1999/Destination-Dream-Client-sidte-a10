@@ -1,6 +1,15 @@
 import { NavLink } from "react-router-dom";
+import UseAuth from "../UseAuth/UseAuth";
+import { useState } from "react";
+// import { useState } from "react";
 
 const Nav = () => {
+  const { logOutUser, user } = UseAuth();
+  const [showEmail, setShowEmail] = useState(false);
+  const { displayName, photoURL, email } = user || {};
+
+  // const [showUser, setShowUser] = useState(false);
+  // const { photoURL, displayName } = user || {};
   const Link = (
     <>
       <li>
@@ -17,6 +26,13 @@ const Nav = () => {
       </li>
     </>
   );
+  const handleLogOut = () => {
+    logOutUser().then((result) => {
+      console.log(result, "log out sussecfull").catch((error) => {
+        console.log(error);
+      });
+    });
+  };
   return (
     <div className="averia-serif">
       <div className="navbar bg-base-100  shadow-md rounded-b-lg px-5  ">
@@ -57,13 +73,48 @@ const Nav = () => {
         <div className="navbar-center hidden  lg:flex">
           <ul className="menu menu-horizontal  px-1">{Link}</ul>
         </div>
+
         <div className="navbar-end">
-          <NavLink
-            to="/login"
-            className="btn text-orange-500 bg-gray-200 font-bold"
-          >
-            LOGIN
-          </NavLink>
+          {user ? (
+            <>
+              <div>
+                <div
+                  onMouseLeave={() => setShowEmail(false)}
+                  onMouseEnter={() => setShowEmail(true)}
+                  className="avatar relative"
+                >
+                  <div className="w-9 rounded-full ring ring-orange-600 mr-5 ring-offset-base-100 ring-offset-2">
+                    <img
+                      src={
+                        "https://cdn-icons-png.flaticon.com/128/15735/15735369.png"
+                      }
+                    />
+                  </div>
+                </div>
+                <div className={`${showEmail ? "flex" : "hidden"}`}>
+                  <div className="bg-gray-400 opacity-80 lg:w-[250px] rounded-md text-white absolute z-10 right-[230px] top-[70px]">
+                    <div className="p-4 font-semibold">
+                      <h1>{displayName || "Not found"}</h1>
+                      <h1>{email || "Not Found"}</h1>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="btn text-orange-500 bg-gray-200 font-bold"
+              >
+                LogOUT
+              </button>
+            </>
+          ) : (
+            <NavLink
+              to="/login"
+              className="btn text-orange-500 bg-gray-200 font-bold"
+            >
+              LOGIN
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
