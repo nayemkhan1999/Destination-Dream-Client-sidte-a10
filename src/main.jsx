@@ -19,11 +19,13 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+
     errorElement: <Error />,
     children: [
       {
         path: "/",
         element: <Home />,
+        loader: () => fetch("http://localhost:5000/destination"),
       },
       {
         path: "/login",
@@ -36,6 +38,7 @@ const router = createBrowserRouter([
       {
         path: "/allTourist",
         element: <AllTouristsSpot />,
+        loader: () => fetch("http://localhost:5000/destination"),
       },
       {
         path: "/addTourist",
