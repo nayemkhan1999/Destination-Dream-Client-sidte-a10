@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import UseAuth from "../UseAuth/UseAuth";
 import { useForm } from "react-hook-form";
+import { FcGoogle } from "react-icons/fc";
+import { useState } from "react";
+import { FaEye, FaEyeSlash, FaGithubSquare } from "react-icons/fa";
 
 const Login = () => {
-  const { LoginUser } = UseAuth();
+  const { LoginUser, googleLoginUser, gitHubLoginUser } = UseAuth();
   console.log(LoginUser);
+  const [showIcon, setShowIcon] = useState(false);
+  const navigate = useNavigate();
 
   const {
     register,
@@ -16,6 +21,15 @@ const Login = () => {
     const { email, password } = data;
     LoginUser(email, password).then((result) => {
       console.log(result);
+    });
+  };
+
+  // social Provider navigate
+  const handleSocialUser = (socialProvider) => {
+    socialProvider().then((result) => {
+      if (result.user) {
+        navigate(location?.state || "/");
+      }
     });
   };
 
@@ -48,17 +62,16 @@ const Login = () => {
                 </label>
 
                 <input
-                  // type={showpassword ? "text" : "password"}
-                  type="text"
+                  type={showIcon ? "text" : "password"}
                   placeholder="password"
                   className="input input-bordered text-black font-medium relative"
                   {...register("password", { required: true })}
                 />
                 <span
                   className="absolute top-[53px] right-[15px] text-black text-lg"
-                  // onClick={() => setShowPassword(!showpassword)}
+                  onClick={() => setShowIcon(!showIcon)}
                 >
-                  {/* {showpassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>} */}
+                  {showIcon ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                 </span>
 
                 {errors.password && (
@@ -83,19 +96,23 @@ const Login = () => {
                 {/* Another LInks */}
 
                 <button
-                  // onClick={() => handleSocialLogin(googleLogin)}
+                  onClick={() => handleSocialUser(googleLoginUser)}
                   className="btn btn-active text-sm opacity-90 text-black font-medium"
                 >
                   continue with
-                  <span className="text-3xl">{/* <FcGoogle /> */}</span>
+                  <span className="text-3xl">
+                    <FcGoogle />
+                  </span>
                 </button>
 
                 <button
-                  // onClick={() => handleSocialLogin(GitHubLogin)}
+                  onClick={() => handleSocialUser(gitHubLoginUser)}
                   className="btn  btn-active text-sm opacity-90 text-black font-medium"
                 >
                   continue with
-                  <span className="text-3xl">{/* <FaGithubSquare /> */}</span>
+                  <span className="text-3xl">
+                    <FaGithubSquare />
+                  </span>
                 </button>
               </div>
 

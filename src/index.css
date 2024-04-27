@@ -66,3 +66,35 @@
 .slide8 {
   background-image: url("../src/assets/img/img8.jpg");
 }
+
+/* Demos Section */
+.containerImg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.containerImg:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 8px 5px #555;
+}
+
+.container1 {
+  background-image: url("../src/assets/img/demos1.jpg");
+}
+.container2 {
+  background-image: url("../src/assets/img/demos2.jpg");
+}
+.container3 {
+  background-image: url("../src/assets/img/demos3.jpg");
+}
+.container4 {
+  background-image: url("../src/assets/img/demos4.jpg");
+}
+.container5 {
+  background-image: url("../src/assets/img/demos5.jpg");
+}
+.container6 {
+  background-image: url("../src/assets/img/demos6.jpg");
+}

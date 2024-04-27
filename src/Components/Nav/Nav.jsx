@@ -83,9 +83,10 @@ const Nav = () => {
                   onMouseEnter={() => setShowEmail(true)}
                   className="avatar relative"
                 >
-                  <div className="w-9 rounded-full ring ring-orange-600 mr-5 ring-offset-base-100 ring-offset-2">
+                  <div className="w-9 rounded-full ring-2  ring-teal-600 mr-5  ">
                     <img
                       src={
+                        user?.photoURL ||
                         "https://cdn-icons-png.flaticon.com/128/15735/15735369.png"
                       }
                     />
