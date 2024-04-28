@@ -11,15 +11,19 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <div>
-        <h2>hello{travel.length}</h2>
-
-        {travel.length > 6
-          ? travel
-              .map((hero) => <HeroCard key={hero._id} hero={hero}></HeroCard>)
-              .slice(0, 6)
-          : travel.map((hero) => (
-              <HeroCard key={hero._id} hero={hero}></HeroCard>
-            ))}
+        <h2 className="text-5xl tracking-widest opacity-75 font-bold mt-28">
+          Tourists Spot
+        </h2>
+        <div className="divider"></div>
+        <div className="grid md:grid-cols-3 gap-4 mt-8">
+          {travel.length > 6
+            ? travel
+                .map((hero) => <HeroCard key={hero._id} hero={hero}></HeroCard>)
+                .slice(0, 6)
+            : travel.map((hero) => (
+                <HeroCard key={hero._id} hero={hero}></HeroCard>
+              ))}
+        </div>
       </div>
       <HotelBooking></HotelBooking>
       <BlogSite></BlogSite>

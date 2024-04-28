@@ -4,6 +4,7 @@ import { TiWeatherPartlySunny } from "react-icons/ti";
 const Cards = ({ card }) => {
   const {
     name,
+    _id,
     Country,
     spotLocation,
     averageCost,
@@ -165,9 +166,11 @@ const Cards = ({ card }) => {
               </p>
             </div>
           </div>
+          {/* <NavLink to={`/viewDetailsCard/${_id}`}> */}
           <button className="btn w-full btn-ghost mt-4 bg-gray-300 text-teal-800 font-bold text-sm tracking-widest">
             View Details
           </button>
+          {/* </NavLink> */}
         </div>
       </div>
     </div>

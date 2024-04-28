@@ -3,7 +3,10 @@ import { SiGooglemaps } from "react-icons/si";
 const BlogSite = () => {
   return (
     <div>
-      <div className="mt-16 border-2 rounded-xl shadow-xl">
+      <h2 className="text-5xl tracking-widest opacity-75 font-bold mt-28">
+        Check Out
+      </h2>
+      <div className="mt-16  rounded-xl shadow-xl">
         <section className="p-6 dark:text-gray-800">
           <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
             <div className="w-full px-6 py-16 rounded-md sm:px-12 md:px-16 xl:col-span-2 dark:bg-gray-50">

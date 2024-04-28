@@ -4,9 +4,11 @@ import googleMap from "../../assets/img/googleMap.png";
 const HotelBooking = () => {
   return (
     <div>
-      <h2 className="text-4xl mt-10 font-semibold">Find Your Destinations</h2>
-      <div className="divider w-96 text-center mx-auto "></div>
-      <div className="mt-16 border-2 rounded-xl shadow-xl">
+      <h2 className="text-5xl tracking-widest opacity-75 font-bold mt-28">
+        Find Your Destinations
+      </h2>
+      {/* <div className="divider"></div> */}
+      <div className="mt-16  rounded-xl shadow-xl">
         <section className="p-6 dark:text-gray-800">
           <div className="container grid gap-6 mx-auto text-center lg:grid-cols-2 xl:grid-cols-5">
             <img

@@ -33,7 +33,20 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="slide slide2"></div>
+          <div className="slide slide2">
+            <div className="text-center">
+              <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
+                Unforgotten Experiences
+              </h1>
+              <p className="text-sm text-white opacity-70 mt-3">
+                We are in this business for more than ten years. Customers
+                satisfied with reliable & excellent customer support.
+              </p>
+              <button className="btn  bg-[#F3643C] border-none mt-5 text-white p-4">
+                View Features
+              </button>
+            </div>
+          </div>
         </SwiperSlide>
 
         <SwiperSlide>
