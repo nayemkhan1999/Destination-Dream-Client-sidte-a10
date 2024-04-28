@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const { CreateUser, UserUpdateProfile } = UseAuth();
@@ -48,9 +49,12 @@ const Register = () => {
   };
   return (
     <div className="container mx-auto img">
+      <Helmet>
+        <title>Destination | Register page</title>
+      </Helmet>
       <div className="hero ">
         <div className="hero-content ">
-          <div className="card shrink-0 w-96  text-white bg-black shadow-xl ">
+          <div className="card shrink-0 w-96  text-white  bg-gray-900 shadow-xl opacity-70  ">
             <h1 className="text-5xl font-bold mx-auto mt-2">Register</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
@@ -112,7 +116,7 @@ const Register = () => {
                   {...register("password", { required: true })}
                 />
                 <span
-                  className="absolute top-[430px] right-[40px] text-black text-lg"
+                  className="absolute top-[465px] right-[75px] text-black text-lg"
                   onClick={() => setShowPassword(!showPassword)}
                 >
                   {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}

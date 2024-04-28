@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { GiMoneyStack, GiWorld } from "react-icons/gi";
 import { IoAirplane, IoLocationSharp, IoTimeOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
@@ -22,6 +23,9 @@ const ViewDetailsCard = () => {
   } = views;
   return (
     <div>
+      <Helmet>
+        <title>Destination | View Details Page</title>
+      </Helmet>
       <div className="hero min-h-screen border-2 mt-5 rounded-xl shadow-xl">
         <div className="hero-content flex-col lg:flex-row items-center ">
           <img src={photo} className="max-w-2xl rounded-lg shadow-2xl" />

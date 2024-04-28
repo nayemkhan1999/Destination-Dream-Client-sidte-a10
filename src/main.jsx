@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
+import { Helmet } from "react-helmet";
 import Error from "./Components/Error/Error";
 import Home from "./Components/Home/Home";
 
@@ -15,6 +15,7 @@ import AddTouristsSpot from "./Components/AddTouristsSpot/AddTouristsSpot";
 import MyList from "./Components/MyList/MyList";
 import AuthProvider from "./Components/AuthProvider/AuthProvider";
 import ViewDetailsCard from "./Components/ViewDetailsCard/ViewDetailsCard";
+import { HelmetProvider } from "react-helmet-async";
 
 const router = createBrowserRouter([
   {
@@ -62,7 +63,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>
 );

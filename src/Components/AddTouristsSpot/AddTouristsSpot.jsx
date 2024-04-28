@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 const AddTouristsSpot = () => {
   const handleButton = (event) => {
@@ -55,6 +56,9 @@ const AddTouristsSpot = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>Destination | AddTouristsSpot Page</title>
+      </Helmet>
       <div className="bg-[#F4F3F0] px-24 py-5 container mx-auto mt-5 rounded-xl">
         <h2 className="text-4xl text-gray-400 font-extrabold text-center mb-5">
           Add Tourists Spot
@@ -79,13 +83,41 @@ const AddTouristsSpot = () => {
               <label className="label">
                 <span className="label-text"> Country Name </span>
               </label>
-              <label className="input-group">
+
+              <label className="input-group relative">
                 <input
                   type="text"
                   name="Country"
                   placeholder="Country Name"
                   className="input input-bordered w-full"
                 />
+                <ul className="menu menu-horizontal px-1 absolute -ml-12 top-2">
+                  <li>
+                    <details>
+                      <summary></summary>
+                      <ul className="p-2 bg-base-100 rounded-t-none">
+                        <li>
+                          <a>Bangladesh</a>
+                        </li>
+                        <li>
+                          <a>Thailand</a>
+                        </li>
+                        <li>
+                          <a>Indonesia</a>
+                        </li>
+                        <li>
+                          <a>Malaysia</a>
+                        </li>
+                        <li>
+                          <a>Vietnam</a>
+                        </li>
+                        <li>
+                          <a>Cambodia</a>
+                        </li>
+                      </ul>
+                    </details>
+                  </li>
+                </ul>
               </label>
             </div>
           </div>

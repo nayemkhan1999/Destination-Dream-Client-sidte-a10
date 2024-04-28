@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
 import { FaEye, FaEyeSlash, FaGithubSquare } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { LoginUser, googleLoginUser, gitHubLoginUser } = UseAuth();
@@ -35,9 +36,12 @@ const Login = () => {
 
   return (
     <div className="container mx-auto img">
+      <Helmet>
+        <title>Destination | Login Page</title>
+      </Helmet>
       <div className="hero ">
         <div className="hero-content ">
-          <div className="card shrink-0 w-96  text-white bg-black shadow-xl ">
+          <div className="card shrink-0 w-96  text-white bg-gray-900 shadow-xl z-10 opacity-70 ">
             <h1 className="text-5xl font-bold mx-auto mt-2">House</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
@@ -92,7 +96,7 @@ const Login = () => {
               <div className="flex flex-col w-full">
                 <div className="divider divider-neutral">Or Login With</div>
               </div>
-              <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center justify-between gap-2 -ml-9">
                 {/* Another LInks */}
 
                 <button

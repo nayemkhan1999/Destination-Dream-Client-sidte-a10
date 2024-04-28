@@ -98,3 +98,13 @@
 .container6 {
   background-image: url("../src/assets/img/demos6.jpg");
 }
+
+/* login page backRound img */
+.img {
+  background-image: url("../src/assets/img/login.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  margin-top: 5px;
+}

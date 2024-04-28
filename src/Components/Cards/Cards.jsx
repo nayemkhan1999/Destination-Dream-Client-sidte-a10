@@ -1,4 +1,3 @@
-import { FaLocationDot } from "react-icons/fa6";
 import { TiWeatherPartlySunny } from "react-icons/ti";
 import { NavLink } from "react-router-dom";
 
@@ -6,8 +5,6 @@ const Cards = ({ card }) => {
   const {
     name,
     _id,
-    Country,
-    spotLocation,
     averageCost,
     seasonality,
     tavelTime,
@@ -15,7 +12,6 @@ const Cards = ({ card }) => {
     UserEmail,
     photo,
     totalVisitors,
-    description,
   } = card;
   return (
     <div>
