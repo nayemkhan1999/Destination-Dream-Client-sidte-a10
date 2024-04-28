@@ -1,5 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
 import { TiWeatherPartlySunny } from "react-icons/ti";
+import { NavLink } from "react-router-dom";
 
 const Cards = ({ card }) => {
   const {
@@ -21,13 +22,13 @@ const Cards = ({ card }) => {
       <div className="rounded-md shadow-md sm:w-96 dark:bg-gray-50 dark:text-gray-800">
         <div className="flex items-center justify-between p-3">
           <div className="flex items-center space-x-2">
-            <img
-              src="https://source.unsplash.com/50x50/?portrait"
-              alt=""
-              className="object-cover object-center w-8 h-8 rounded-full shadow-sm dark:bg-gray-500 dark:border-gray-300"
-            />
+            <span className="text-xl font-bold border rounded-xl opacity-70 bg-gray-700 text-teal-400 border-gray-500 p-2">
+              User
+            </span>
             <div className="-space-y-1">
-              <h2 className="text-sm font-semibold leading-none">{UserName}</h2>
+              <h2 className="text-sm font-semibold leading-none text-left">
+                {UserName}
+              </h2>
               <span className="inline-block text-xs leading-none dark:text-gray-600">
                 {UserEmail}
               </span>
@@ -127,50 +128,38 @@ const Cards = ({ card }) => {
                 />
               </div>
               <span className="text-sm">
-                {totalVisitors}
+                Total Visitors Per Year {totalVisitors}
                 <span className="font-semibold"> peoples</span>
               </span>
             </div>
           </div>
           <div className=" flex items-center justify-between">
             <p className="text-base font-bold opacity-75">{name}</p>
-            <p className="text-base font-bold opacity-75">
-              country:
-              <span className="font-semibold opacity-80 text-sm tracking-widest">
-                {Country}
+            <p className="text-base font-bold flex items-center gap-2  ">
+              <span>
+                <TiWeatherPartlySunny />
               </span>
+              {seasonality}
             </p>
           </div>
           <div className="flex items-center justify-between ">
             <div className="text-left mt-2">
-              <p className="text-sm flex items-center gap-2 font-medium opacity-75 tracking-wider">
-                <span className="text-rose-600">
-                  <FaLocationDot />
-                </span>{" "}
-                {spotLocation}
-              </p>
-              <p className="text-sm font-medium opacity-85 mt-2">
+              <p className="text-sm font-medium opacity-85 ">
                 AverageCost:{" "}
                 <span className="font-bold opacity-70">{averageCost}</span>
               </p>
             </div>
             <div className="mt-2">
-              <p className="text-base font-bold flex items-center gap-2  ">
-                <span>
-                  <TiWeatherPartlySunny />
-                </span>
-                {seasonality}
-              </p>
-              <p className="text-sm font-medium opacity-85 mt-2">
+              <p className="text-sm font-medium opacity-85 ">
                 TavelTime: {tavelTime}
               </p>
             </div>
           </div>
-          {/* <NavLink to={`/viewDetailsCard/${_id}`}> */}
-          <button className="btn w-full btn-ghost mt-4 bg-gray-300 text-teal-800 font-bold text-sm tracking-widest">
-            View Details
-          </button>
-          {/* </NavLink> */}
+          <NavLink to={`/viewDetailsCard/${_id}`}>
+            <button className="btn w-full btn-ghost mt-4 bg-gray-300 text-teal-800 font-bold text-sm tracking-widest">
+              View Details
+            </button>
+          </NavLink>
         </div>
       </div>
     </div>
