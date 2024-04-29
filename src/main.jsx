@@ -16,6 +16,8 @@ import MyList from "./Components/MyList/MyList";
 import AuthProvider from "./Components/AuthProvider/AuthProvider";
 import ViewDetailsCard from "./Components/ViewDetailsCard/ViewDetailsCard";
 import { HelmetProvider } from "react-helmet-async";
+import UpdatePage from "./Components/UpdatePage/UpdatePage";
+import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
 
 const router = createBrowserRouter([
   {
@@ -44,15 +46,33 @@ const router = createBrowserRouter([
       },
       {
         path: "/addTourist",
-        element: <AddTouristsSpot />,
+        element: (
+          <PrivetRoute>
+            <AddTouristsSpot />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/myList",
-        element: <MyList />,
+        element: (
+          <PrivetRoute>
+            <MyList />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/viewDetailsCard/:id",
-        element: <ViewDetailsCard />,
+        element: (
+          <PrivetRoute>
+            <ViewDetailsCard />
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/destination/${params.id}`),
+      },
+      {
+        path: "/updatePage/:id",
+        element: <UpdatePage />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/destination/${params.id}`),
       },

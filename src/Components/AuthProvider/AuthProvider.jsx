@@ -14,7 +14,7 @@ import auth from "../../Firebase.config";
 export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  console.log(user, "authProvider 12 number line");
+  // console.log(user, "authProvider 12 number line");
 
   const [loading, setLoading] = useState(true);
   const [reload, setReload] = useState(false);

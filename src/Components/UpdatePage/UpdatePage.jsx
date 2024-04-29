@@ -1,10 +1,27 @@
-import { Helmet } from "react-helmet";
+import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../UseAuth/UseAuth";
-const AddTouristsSpot = () => {
+import { Helmet } from "react-helmet";
+
+const UpdatePage = () => {
+  const update = useLoaderData();
+  const {
+    name,
+    _id,
+    Country,
+    spotLocation,
+    averageCost,
+    seasonality,
+    tavelTime,
+    photo,
+    totalVisitors,
+    email,
+    displayName,
+    description,
+  } = update;
   const { user } = UseAuth() || {};
 
-  const handleButton = (event) => {
+  const handleUpdate = (event) => {
     event.preventDefault();
     console.log(user, "9number line");
 
@@ -23,7 +40,7 @@ const AddTouristsSpot = () => {
     const description = form.description.value;
     const email = user?.email;
     const displayName = user?.displayName;
-    const newDestination = {
+    const updateDestination = {
       name,
       Country,
       spotLocation,
@@ -36,23 +53,23 @@ const AddTouristsSpot = () => {
       email,
       displayName,
     };
-    console.log(newDestination);
+    console.log(updateDestination);
 
     // Send data to the server
-    fetch("http://localhost:5000/destination", {
-      method: "POST",
+    fetch(`http://localhost:5000/destination/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newDestination),
+      body: JSON.stringify(updateDestination),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if (data.insertedId) {
+        if (data.modifiedCount > 0) {
           Swal.fire({
             title: "Success",
-            text: "User Added a Successfully",
+            text: "Updated Successfully",
             icon: "success",
             confirmButtonText: "Cool",
           });
@@ -63,13 +80,13 @@ const AddTouristsSpot = () => {
   return (
     <div>
       <Helmet>
-        <title>Destination | AddTouristsSpot Page</title>
+        <title>Destination | Update Page</title>
       </Helmet>
       <div className="bg-[#F4F3F0] px-24 py-5 container mx-auto mt-5 rounded-xl">
         <h2 className="text-4xl text-gray-400 font-extrabold text-center mb-5">
-          Add Tourists Spot
+          Update Page
         </h2>
-        <form onSubmit={handleButton}>
+        <form onSubmit={handleUpdate}>
           {/* form country and spot name */}
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
@@ -80,6 +97,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="name"
+                  defaultValue={name}
                   placeholder="Tourists Spot Name"
                   className="input input-bordered w-full"
                 />
@@ -94,6 +112,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="Country"
+                  defaultValue={Country}
                   placeholder="Country Name"
                   className="input input-bordered w-full"
                 />
@@ -137,6 +156,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="spotLocation"
+                  defaultValue={spotLocation}
                   placeholder="location"
                   className="input input-bordered w-full"
                 />
@@ -150,6 +170,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="averageCost"
+                  defaultValue={averageCost}
                   placeholder=" Average Cost"
                   className="input input-bordered w-full"
                 />
@@ -169,6 +190,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="seasonality"
+                  defaultValue={seasonality}
                   placeholder=" summer or winter "
                   className="input input-bordered w-full"
                 />
@@ -182,6 +204,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="tavelTime"
+                  defaultValue={tavelTime}
                   placeholder="Travel Time"
                   className="input input-bordered w-full"
                 />
@@ -231,6 +254,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="photo"
+                  defaultValue={photo}
                   placeholder="Photo URL"
                   className="input input-bordered w-full"
                 />
@@ -249,6 +273,7 @@ const AddTouristsSpot = () => {
                 <input
                   type="text"
                   name="totalVisitors"
+                  defaultValue={totalVisitors}
                   placeholder=" total_visitors  "
                   className="input input-bordered w-full"
                 />
@@ -261,14 +286,15 @@ const AddTouristsSpot = () => {
               <textarea
                 placeholder="Short Description"
                 name="description"
+                defaultValue={description}
                 className="textarea textarea-bordered textarea-md w-full max-w-xs"
               ></textarea>
             </div>
           </div>
           <input
             type="submit"
-            value="Add Button"
-            className="btn btn-block bg-teal-900 text-gray-400 text-base"
+            value="Update Button"
+            className="btn btn-block bg-teal-500 text-gray-900 text-base"
           />
         </form>
       </div>
@@ -276,4 +302,4 @@ const AddTouristsSpot = () => {
   );
 };
 
-export default AddTouristsSpot;
+export default UpdatePage;

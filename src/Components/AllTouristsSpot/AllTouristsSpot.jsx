@@ -1,8 +1,11 @@
 import { useLoaderData } from "react-router-dom";
 import Cards from "../Cards/Cards";
 import { Helmet } from "react-helmet";
+import UseAuth from "../UseAuth/UseAuth";
 
 const AllTouristsSpot = () => {
+  const { user } = UseAuth();
+  console.log(user?.email, user?.displayName);
   const destinations = useLoaderData();
 
   return (

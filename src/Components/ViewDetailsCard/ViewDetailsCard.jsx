@@ -9,13 +9,12 @@ const ViewDetailsCard = () => {
   const views = useLoaderData();
   const {
     name,
-
     Country,
     spotLocation,
     averageCost,
     seasonality,
     tavelTime,
-    UserName,
+    displayName,
     UserEmail,
     photo,
     totalVisitors,
@@ -31,7 +30,7 @@ const ViewDetailsCard = () => {
           <img src={photo} className="max-w-2xl rounded-lg shadow-2xl" />
           <div className="">
             <h1 className="text-5xl font-bold opacity-90 tracking-wider text-left  ">
-              {UserName}
+              {displayName}
             </h1>
             <h1 className="text-xl font-semibold opacity-70 tracking-wider text-left flex items-center gap-3 mt-2">
               <span className="">
