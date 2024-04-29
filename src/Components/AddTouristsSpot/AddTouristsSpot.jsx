@@ -66,13 +66,13 @@ const AddTouristsSpot = () => {
         <title>Destination | AddTouristsSpot Page</title>
       </Helmet>
       <div className="bg-[#F4F3F0] px-24 py-5 container mx-auto mt-5 rounded-xl">
-        <h2 className="text-4xl text-gray-400 font-extrabold text-center mb-5">
+        <h2 className="lg:text-4xl text-xl text-gray-400 font-extrabold text-center mb-5">
           Add Tourists Spot
         </h2>
         <form onSubmit={handleButton}>
           {/* form country and spot name */}
-          <div className="md:flex mb-8">
-            <div className="form-control md:w-1/2">
+          <div className="md:flex   mb-8">
+            <div className="form-control md:w-1/2 w-40">
               <label className="label">
                 <span className="label-text"> Tourists Spot Name </span>
               </label>
@@ -85,7 +85,7 @@ const AddTouristsSpot = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2 ml-4">
+            <div className="form-control md:w-1/2 w-40 ml-4">
               <label className="label">
                 <span className="label-text"> Country Name </span>
               </label>
@@ -129,7 +129,7 @@ const AddTouristsSpot = () => {
           </div>
           {/* form location and costing */}
           <div className="md:flex mb-8">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-1/2 w-40">
               <label className="label">
                 <span className="label-text">location</span>
               </label>
@@ -142,7 +142,7 @@ const AddTouristsSpot = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2 ml-4">
+            <div className="form-control md:w-1/2 w-40 ml-4">
               <label className="label">
                 <span className="label-text"> Average Cost</span>
               </label>
@@ -158,7 +158,7 @@ const AddTouristsSpot = () => {
           </div>
           {/* summer or winter and travel time */}
           <div className="md:flex mb-8">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-1/2 w-40">
               <label className="label">
                 <span className="label-text">
                   {" "}
@@ -174,7 +174,7 @@ const AddTouristsSpot = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2 ml-4">
+            <div className="form-control md:w-1/2 w-40 ml-4">
               <label className="label">
                 <span className="label-text"> Travel Time like-7days </span>
               </label>
@@ -190,7 +190,7 @@ const AddTouristsSpot = () => {
           </div>
           {/* form userName & Email */}
           <div className="md:flex mb-8">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-1/2 w-40">
               <label className="label">
                 <span className="label-text"> User Name </span>
               </label>
@@ -205,7 +205,7 @@ const AddTouristsSpot = () => {
                 />
               </label>
             </div>
-            <div className="form-control md:w-1/2 ml-4">
+            <div className="form-control md:w-1/2 w-40 ml-4">
               <label className="label">
                 <span className="label-text">User Email</span>
               </label>
@@ -239,7 +239,7 @@ const AddTouristsSpot = () => {
           </div>
           {/* short Descriptions */}
           <div className="md:flex-col mb-8">
-            <div className="form-control md:w-1/2">
+            <div className="form-control md:w-1/2 w-40">
               <label className="label">
                 <span className="label-text">
                   total Visitors Per sYear like-10000
@@ -268,7 +268,7 @@ const AddTouristsSpot = () => {
           <input
             type="submit"
             value="Add Button"
-            className="btn btn-block bg-teal-900 text-gray-400 text-base"
+            className="btn  btn-block bg-teal-900 text-gray-400 text-base"
           />
         </form>
       </div>

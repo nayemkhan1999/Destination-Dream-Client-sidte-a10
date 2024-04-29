@@ -18,7 +18,7 @@ const Slider = () => {
       >
         <SwiperSlide>
           <div className="slide slide1">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 In Depth Tour Features
               </h1>
@@ -34,7 +34,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide2">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 Unforgotten Experiences
               </h1>
@@ -51,7 +51,7 @@ const Slider = () => {
 
         <SwiperSlide>
           <div className="slide slide3">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 The City Tour
               </h1>
@@ -67,7 +67,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide4">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 Love Your Dream Now
               </h1>
@@ -84,7 +84,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide5">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 Mountaineering Home
               </h1>
@@ -100,7 +100,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide6">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 Let's Explore Your Honeymoon Trip
               </h1>
@@ -116,7 +116,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide7">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 We Are Whom You Trusted
               </h1>
@@ -132,7 +132,7 @@ const Slider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide slide8">
-            <div className="text-center">
+            <div className="text-center lg:block hidden">
               <h1 className="text-gray-300 text-3xl font-semibold opacity-80">
                 Find Some Amazing Tour.
               </h1>

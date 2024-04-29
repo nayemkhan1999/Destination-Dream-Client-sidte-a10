@@ -6,7 +6,7 @@ const Footer = () => {
       <footer className="footer footer-center p-10 bg-black text-primary-content mt-5 -mb-7">
         <aside>
           <div className="flex items-center">
-            <p className="font-bold text-4xl text-gray-400 tracking-wider">
+            <p className="font-bold lg:text-4xl text-xl text-gray-400 tracking-wider">
               <span className="text-5xl text-orange-500">D</span>estination
             </p>
             <img

@@ -15,7 +15,7 @@ const ViewDetailsCard = () => {
     seasonality,
     tavelTime,
     displayName,
-    UserEmail,
+    email,
     photo,
     totalVisitors,
     description,
@@ -27,9 +27,9 @@ const ViewDetailsCard = () => {
       </Helmet>
       <div className="hero min-h-screen border-2 mt-5 rounded-xl shadow-xl">
         <div className="hero-content flex-col lg:flex-row items-center ">
-          <img src={photo} className="max-w-2xl rounded-lg shadow-2xl" />
+          <img src={photo} className="lg:max-w-2xl rounded-lg shadow-2xl" />
           <div className="">
-            <h1 className="text-5xl font-bold opacity-90 tracking-wider text-left  ">
+            <h1 className="lg:text-5xl text-3xl font-bold opacity-90 tracking-wider text-left  ">
               {displayName}
             </h1>
             <h1 className="text-xl font-semibold opacity-70 tracking-wider text-left flex items-center gap-3 mt-2">
@@ -45,10 +45,10 @@ const ViewDetailsCard = () => {
               {description}
             </p>
             <div className="flex items-center gap-2">
-              <h1 className="text-left font-bold text-2xl opacity-90 tracking-wider ">
+              <h1 className="text-left font-bold lg:text-2xl text-[15px] opacity-90 tracking-wider ">
                 Spot Name:
               </h1>
-              <p className=" text-left opacity-70 text-xl tracking-wide font-bold">
+              <p className=" text-left opacity-70 lg:text-xl tracking-wide font-bold">
                 {name}
               </p>
             </div>
@@ -59,8 +59,8 @@ const ViewDetailsCard = () => {
               </span>
               <p>
                 <span className="font-bold">Email:</span>
-                <span className="opacity-70 ml-2 text-gray-500 font-semibold">
-                  {UserEmail}
+                <span className="opacity-70 ml-2 lg:text-base text-[8px] text-gray-500 font-semibold">
+                  {email}
                 </span>
               </p>
             </div>

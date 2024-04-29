@@ -7,7 +7,7 @@ import AuthProvider from "./Components/AuthProvider/AuthProvider";
 function App() {
   return (
     <div>
-      <div className="container mx-auto averia-serif">
+      <div className="container  mx-auto averia-serif">
         <Nav></Nav>
         <AuthProvider />
       </div>

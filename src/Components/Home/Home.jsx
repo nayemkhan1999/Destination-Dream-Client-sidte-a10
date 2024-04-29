@@ -15,7 +15,7 @@ const Home = () => {
       </Helmet>
       <Slider></Slider>
       <div>
-        <h2 className="text-5xl tracking-widest opacity-75 font-bold mt-28">
+        <h2 className="lg:text-5xl text-3xl tracking-widest opacity-75 font-bold mt-28">
           Tourists Spot
         </h2>
         <div className="divider"></div>

@@ -17,7 +17,7 @@ const HeroCard = ({ hero }) => {
 
   return (
     <div>
-      <div className="rounded-md shadow-md sm:w-96 dark:bg-gray-50 dark:text-gray-800">
+      <div className="rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 ">
         <div className="flex items-center justify-between p-3"></div>
         <img
           src={photo}
