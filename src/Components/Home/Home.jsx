@@ -5,6 +5,8 @@ import HotelBooking from "../HotelBooking/HotelBooking";
 import Slider from "../Slider/Slider";
 import HeroCard from "../HeroCard/HeroCard";
 import { Helmet } from "react-helmet";
+import CategoryCard from "../CategoryCard/CategoryCard";
+import CategoryCollection from "../CategoryCollection/CategoryCollection";
 
 const Home = () => {
   const travel = useLoaderData();
@@ -14,6 +16,7 @@ const Home = () => {
         <title>Destinations | Home Page</title>
       </Helmet>
       <Slider></Slider>
+      <CategoryCollection></CategoryCollection>
       <div>
         <h2 className="lg:text-5xl text-3xl tracking-widest opacity-75 font-bold mt-28">
           Tourists Spot

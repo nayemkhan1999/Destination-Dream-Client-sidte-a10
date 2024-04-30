@@ -1,8 +1,24 @@
-# React + Vite
+# Destination_Dream
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+live link url:
 
-Currently, two official plugins are available:
+- This website is Travel and Tourist website Travel in Asia.......
+- You can travel any country for asia and you can Book any hotel your sewtable place!
+- View all details show the display
+- You can see avareg cost or time duration
+- it you choiche subcategory country your choiche..
+- And please visit our website and don't forget review.....
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Used By
+
+This project is used by the following npm package name:
+
+- React Hook form,
+- Swiper slider,
+- React icons,
+- Tailwind CSS,
+- Daisy UI,
+- Mamba UI - Components,
+- React-Hot-Toast,
+- React Router Dom,
+- Sweet Alert2,

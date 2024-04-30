@@ -9,7 +9,9 @@ const Nav = () => {
   const [showEmail, setShowEmail] = useState(false);
   const { displayName, photoURL, email } = user || {};
 
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -150,7 +152,7 @@ const Nav = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn lg:block md:block hidden text-orange-500 bg-gray-200 font-bold"
+                className="px-6 py-3 rounded-md lg:block md:block hidden text-orange-500 bg-gray-200 font-bold"
               >
                 LogOUT
               </button>
@@ -158,7 +160,7 @@ const Nav = () => {
           ) : (
             <NavLink
               to="/login"
-              className="btn lg:block md:block hidden text-orange-500 bg-gray-200 font-bold"
+              className="px-6 py-3 rounded-md lg:block md:block hidden text-orange-500 bg-gray-200 font-bold"
             >
               LOGIN
             </NavLink>

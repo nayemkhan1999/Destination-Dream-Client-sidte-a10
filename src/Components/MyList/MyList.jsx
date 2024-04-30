@@ -43,6 +43,10 @@ const MyList = () => {
                 text: "Your Destination has been deleted.",
                 icon: "success",
               });
+              const remaining = userAddEmail.filter(
+                (craft) => craft._id !== id
+              );
+              setUserAddEmail(remaining);
             }
           });
       }

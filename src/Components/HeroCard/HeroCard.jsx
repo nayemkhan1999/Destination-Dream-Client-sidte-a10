@@ -13,7 +13,7 @@ const HeroCard = ({ hero }) => {
     photo,
     totalVisitors,
   } = hero;
-  console.log(_id, "this is ID");
+  // console.log(_id, "this is ID");
 
   return (
     <div>
