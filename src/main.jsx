@@ -18,6 +18,7 @@ import ViewDetailsCard from "./Components/ViewDetailsCard/ViewDetailsCard";
 import { HelmetProvider } from "react-helmet-async";
 import UpdatePage from "./Components/UpdatePage/UpdatePage";
 import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
+import Subcategory from "./Components/Subcategory/Subcategory";
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,13 @@ const router = createBrowserRouter([
         element: <UpdatePage />,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/destination/${params.id}`),
+      },
+
+      {
+        path: "/subcategory/:category",
+        element: <Subcategory />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/categoryCollection/${params.category}`),
       },
     ],
   },

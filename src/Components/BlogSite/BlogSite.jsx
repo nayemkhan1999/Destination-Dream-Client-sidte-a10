@@ -1,10 +1,22 @@
+import { Typewriter } from "react-simple-typewriter";
 import blogs from "../../assets/img/blog.jpg";
 import { SiGooglemaps } from "react-icons/si";
 const BlogSite = () => {
   return (
     <div>
       <h2 className="lg:text-5xl text-3xl tracking-widest opacity-75 font-bold mt-28">
-        Check Out
+        Check
+        <span className="text-[#F97316]">
+          <Typewriter
+            cursor
+            cursorBlinking
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={["Out"]}
+          />
+        </span>
       </h2>
       <div className="mt-16  rounded-xl shadow-xl">
         <section className="p-6 dark:text-gray-800">

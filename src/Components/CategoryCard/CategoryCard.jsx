@@ -6,18 +6,17 @@ const CategoryCard = ({ CTCard }) => {
   const { imglink, subcategory, description } = CTCard;
   return (
     <div>
-      <div className="card h-[80vh] bg-base-100 shadow-xl mt-10">
-        <figure>
-          <img src={imglink} alt="Shoes" />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title ">SubCategory: {subcategory}</h2>
-          <p className="text-xs text-left">{description}</p>
-          <button className="btn w-44  btn-ghost mt-4 bg-gray-300 text-teal-800 font-bold text-sm tracking-widest">
-            View Details
-          </button>
+      <NavLink to={`/subcategory/${subcategory}`}>
+        <div className="card h-[80vh] bg-base-100 shadow-xl mt-10 cursor-pointer">
+          <figure>
+            <img src={imglink} alt="Shoes" />
+          </figure>
+          <div className="card-body  ">
+            <h2 className="card-title ">{subcategory}</h2>
+            <p className="text-xs text-left">{description}</p>
+          </div>
         </div>
-      </div>
+      </NavLink>
     </div>
   );
 };

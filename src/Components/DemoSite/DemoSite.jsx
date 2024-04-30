@@ -1,8 +1,21 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const DemoSite = () => {
   return (
     <div>
       <h2 className="lg:text-5xl text-3xl tracking-widest opacity-75 font-bold mt-28">
-        Main Website Demos
+        Main Website
+        <span className="text-[#F97316]">
+          <Typewriter
+            cursor
+            cursorBlinking
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={["Demos"]}
+          />
+        </span>
       </h2>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
         <div>

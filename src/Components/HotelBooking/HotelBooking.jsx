@@ -1,11 +1,23 @@
 import map from "../../assets/img/map.jpg";
 import logo from "../../assets/img/logo.png";
 import googleMap from "../../assets/img/googleMap.png";
+import { Typewriter } from "react-simple-typewriter";
 const HotelBooking = () => {
   return (
     <div>
       <h2 className="lg:text-5xl text-3xl tracking-widest opacity-75 font-bold mt-28">
-        Find Your Destinations
+        Find Your
+        <span className="text-[#F97316]">
+          <Typewriter
+            cursor
+            cursorBlinking
+            delaySpeed={1000}
+            deleteSpeed={25}
+            loop={0}
+            typeSpeed={75}
+            words={["Destinations"]}
+          />
+        </span>
       </h2>
       {/* <div className="divider"></div> */}
       <div className="mt-16  rounded-xl shadow-xl">
