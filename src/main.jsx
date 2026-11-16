@@ -1,24 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import Error from "./Components/Error/Error";
 import Home from "./Components/Home/Home";
 
 import App from "./App";
 
-import "./index.css";
-import Login from "./Components/Login/Login";
-import Register from "./Components/Register/Register";
-import AllTouristsSpot from "./Components/AllTouristsSpot/AllTouristsSpot";
-import AddTouristsSpot from "./Components/AddTouristsSpot/AddTouristsSpot";
-import MyList from "./Components/MyList/MyList";
-import AuthProvider from "./Components/AuthProvider/AuthProvider";
-import ViewDetailsCard from "./Components/ViewDetailsCard/ViewDetailsCard";
 import { HelmetProvider } from "react-helmet-async";
-import UpdatePage from "./Components/UpdatePage/UpdatePage";
+import AddTouristsSpot from "./Components/AddTouristsSpot/AddTouristsSpot";
+import AllTouristsSpot from "./Components/AllTouristsSpot/AllTouristsSpot";
+import AuthProvider from "./Components/AuthProvider/AuthProvider";
+import Login from "./Components/Login/Login";
+import MyList from "./Components/MyList/MyList";
 import PrivetRoute from "./Components/PrivetRoute/PrivetRoute";
+import Register from "./Components/Register/Register";
 import Subcategory from "./Components/Subcategory/Subcategory";
+import UpdatePage from "./Components/UpdatePage/UpdatePage";
+import ViewDetailsCard from "./Components/ViewDetailsCard/ViewDetailsCard";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/destination"),
+        loader: () => fetch("https://destination-dreams-server.vercel.app/destination"),
       },
       {
         path: "/login",
@@ -43,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/allTourist",
         element: <AllTouristsSpot />,
-        loader: () => fetch("http://localhost:5000/destination"),
+        loader: () => fetch("https://destination-dreams-server.vercel.app/destination"),
       },
       {
         path: "/addTourist",
@@ -69,20 +68,20 @@ const router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/destination/${params.id}`),
+         fetch(`https://destination-dreams-server.vercel.app/destination/${params.id}`)
       },
       {
         path: "/updatePage/:id",
         element: <UpdatePage />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/destination/${params.id}`),
+          fetch(`https://destination-dreams-server.vercel.app/destination/${params.id}`)
       },
 
       {
         path: "/subcategory/:category",
         element: <Subcategory />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/categoryCollection/${params.category}`),
+          fetch(`https://destination-dreams-server.vercel.app/categoryCollection/${params.category}`)
       },
     ],
   },
