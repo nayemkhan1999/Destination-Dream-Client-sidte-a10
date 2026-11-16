@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import CategoryCard from "../CategoryCard/CategoryCard";
 import { Typewriter } from "react-simple-typewriter";
+import CategoryCard from "../CategoryCard/CategoryCard";
 
 const CategoryCollection = () => {
   const [categoryItem, setCategoryItem] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/destination_category`)
+    fetch("https://destination-dreams-server.vercel.app/destination_category")
       .then((res) => res.json())
       .then((data) => {
         setCategoryItem(data);

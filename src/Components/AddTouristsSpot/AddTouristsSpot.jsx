@@ -39,7 +39,7 @@ const AddTouristsSpot = () => {
     console.log(newDestination);
 
     // Send data to the server
-    fetch("http://localhost:5000/destination", {
+    fetch("https://destination-dreams-server.vercel.app/destination", {
       method: "POST",
       headers: {
         "content-type": "application/json",

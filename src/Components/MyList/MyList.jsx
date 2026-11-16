@@ -1,14 +1,13 @@
-import { useEffect } from "react";
-import UseAuth from "../UseAuth/UseAuth";
-import { useState } from "react";
-import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
+import UseAuth from "../UseAuth/UseAuth";
 const MyList = () => {
   const { user } = UseAuth() || {};
   console.log(user, "mongoDB data");
   const [userAddEmail, setUserAddEmail] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/destination_email/${user?.email}`)
+    fetch(`https://destination-dreams-server.vercel.app/destination_email/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAddEmail(data);
@@ -31,7 +30,7 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/destination/${id}`, {
+        fetch(`https://destination-dreams-server.vercel.app/destination/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

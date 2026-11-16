@@ -1,7 +1,7 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import UseAuth from "../UseAuth/UseAuth";
-import { Helmet } from "react-helmet";
 
 const UpdatePage = () => {
   const update = useLoaderData();
@@ -56,7 +56,7 @@ const UpdatePage = () => {
     console.log(updateDestination);
 
     // Send data to the server
-    fetch(`http://localhost:5000/destination/${_id}`, {
+    fetch(`https://destination-dreams-server.vercel.app/destination/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
